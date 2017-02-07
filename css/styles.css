@@ -34,6 +34,47 @@ body {
   cursor: pointer;
 }
 
+.coinRow {
+  margin-top: 25px;
+}
+
+.coinsRight {
+  float: right;
+}
+
+.coinCount {
+  border-radius: 100px;
+  background-color: #222;
+  color: #ccc;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.coinCountTop {
+  top: 102px;
+}
+
+.coinCountBottom {
+  bottom: 203px;
+}
+
+.coinCountLeft {
+  right: 140px;
+}
+
+.coinCountRight {
+  right: 19px;
+}
+
+.coinInput {
+  width: 65px;
+  height: 20px;
+  display: inline-block;
+}
+
 .btn:hover {
   cursor: pointer;
   color: #ccc;

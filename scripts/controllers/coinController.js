@@ -1,26 +1,41 @@
 angular.module("coinCounter").controller("coinController", function ($scope) {
 
-  $scope.coin1 = {
-    denomination: 25,
-    count: 0
-  };
+  $scope.coins = [
 
-  $scope.coin2 = {
-    denomination: 10,
-    count: 0
-  };
+    {
+      denomination: 25,
+      count: 0
+    },
 
-  $scope.coin3 = {
-    denomination: 5,
-    count: 0
-  };
+    {
+      denomination: 10,
+      count: 0
+    },
 
-  $scope.coin4 = {
-    denomination: 1,
-    count: 0
-  };
+    {
+      denomination: 5,
+      count: 0
+    },
+
+    {
+      denomination: 1,
+      count: 0
+    }
+  ];
 
   $scope.inputCents;
+  $scope.showCoinInput = false;
+
+  var resetCounts = (arr) => {
+    for (var i = 0; i < arr.length; i++) {
+      arr[i].count = 0;
+    }
+  }
+
+  $scope.coinClick = function() {
+    $scope.showCoinInput = true;
+    resetCounts($scope.coins);
+  }
 
   // sort coins largest to smallest to prep for calculating counts
   var sortCoins = (arr) => {
@@ -44,9 +59,13 @@ angular.module("coinCounter").controller("coinController", function ($scope) {
         cents -= (arr[i].count * arr[i].denomination);
       }
     }
+    $scope.coins = arr;
   }
 
   $scope.calculateClick = function () {
+    resetCounts($scope.coins);
+    $scope.showCoinInput = false;
+    
     if (
       !$scope.inputCents === true
       || $scope.inputCents % 1 !== 0
@@ -57,9 +76,8 @@ angular.module("coinCounter").controller("coinController", function ($scope) {
 
     else {
       countCoins(
-        sortCoins([$scope.coin1, $scope.coin2, $scope.coin3, $scope.coin4]), $scope.inputCents
+        sortCoins($scope.coins), $scope.inputCents
         );
-      console.log($scope.coin1, $scope.coin2, $scope.coin3, $scope.coin4);
     }
   }
 });

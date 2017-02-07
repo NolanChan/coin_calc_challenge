@@ -16,30 +16,84 @@
 
       <!-- START top coins group -->
       <div class="form-group">
-        <span class="coins text-center">
-          {{ coin1.denomination }}
-        </span>
-        <span class="coins text-center">
-          {{ coin2.denomination }}
-        </span>
+        <div class="coinRow">
+
+          <!-- Left coin -->
+          <span ng-click="coinClick()" class="coins text-center">
+            <span ng-hide="showCoinInput">
+              {{ coins[0].denomination }}
+            </span>
+            <input
+            ng-show="showCoinInput"
+            ng-model="coins[0].denomination"
+            class="coinInput form-control"
+            type="number">
+          </span>
+          <span ng-if="coins[0].count" class="coinCount coinCountTop coinCountLeft text-center">
+            {{ coins[0].count }}
+          </span>
+
+          <!-- Right coin -->
+          <span ng-click="coinClick()" class="coins coinsRight text-center">
+            <span ng-hide="showCoinInput">
+              {{ coins[1].denomination }}
+            </span>
+            <input
+            ng-show="showCoinInput"
+            ng-model="coins[1].denomination"
+            class="coinInput form-control"
+            type="number">
+          </span>
+          <span ng-if="coins[1].count" class="coinCount coinCountTop coinCountRight text-center">
+            {{ coins[1].count }}
+          </span>
+        </div>
       </div>
       <!-- END top coins group -->
 
       <!-- START bottom coins group -->
       <div class="form-group">
-        <span class="coins text-center">
-          {{ coin3.denomination }}
-        </span>
-        <span class="coins text-center">
-          {{ coin4.denomination }}
-        </span>
+        <div class="coinRow">
+
+          <!-- Left Coin -->
+          <span ng-click="coinClick()" class="coins text-center">
+            <span ng-hide="showCoinInput">
+              {{ coins[2].denomination }}
+            </span>
+            <input
+            ng-show="showCoinInput"
+            ng-model="coins[2].denomination"
+            class="coinInput form-control"
+            type="number">
+          </span>
+          <span ng-if="coins[2].count" class="coinCount coinCountBottom coinCountLeft text-center">
+            {{ coins[2].count }}
+          </span>
+
+          <!-- Right Coin -->
+          <span ng-click="coinClick()" class="coins coinsRight text-center">
+            <span ng-hide="showCoinInput">
+              {{ coins[3].denomination }}
+            </span>
+            <input 
+            ng-show="showCoinInput"
+            ng-model="coins[3].denomination"
+            class="coinInput form-control"
+            type="number">
+          </span>
+          <span ng-if="coins[3].count" class="coinCount coinCountBottom coinCountRight text-center">
+            {{ coins[3].count }}
+          </span>
+        </div>
       </div>
       <!-- END bottom coins group-->
 
       <div class="form-group">
         <input 
-        ng-model="inputCents"
-        class="form-control text-right" 
+        ng-model="inputCents" 
+        ng-click="showCoinInput = false"
+        ng-focus="showCoinInput = false"
+        class="form-control text-right"
         type="number">
       </div>
       <button 
