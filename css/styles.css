@@ -23,6 +23,17 @@ body {
   box-shadow: 3px 3px 1px #EFEFEF;
 }
 
+.coins {
+  border-radius: 100px;
+  background-color: #eee;
+  color: #888;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding-top: 38px;
+  cursor: pointer;
+}
+
 .btn:hover {
   cursor: pointer;
   color: #ccc;

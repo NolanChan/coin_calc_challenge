@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Coin Counter</title>
+  <script src="./scripts/angular.min.js"></script>
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body ng-app="coinCounter" ng-controller="coinController" ng-cloak>
   <div class="container-fluid">
 
     <!-- START centered .coinsWrapper -->
@@ -15,13 +16,23 @@
 
       <!-- START top coins group -->
       <div class="form-group">
-        COINS
+        <span class="coins text-center">
+          {{ coin1.denomination }}
+        </span>
+        <span class="coins text-center">
+          {{ coin2.denomination }}
+        </span>
       </div>
       <!-- END top coins group -->
 
       <!-- START bottom coins group -->
       <div class="form-group">
-        COINS
+        <span class="coins text-center">
+          {{ coin3.denomination }}
+        </span>
+        <span class="coins text-center">
+          {{ coin4.denomination }}
+        </span>
       </div>
       <!-- END bottom coins group-->
 
@@ -36,6 +47,7 @@
     <!-- END centered .coinsWrapper -->
   </div>
   
-  <script src="./coinCalc.js"></script>
+  <script src="./scripts/modules/app.js"></script>
+  <script src="./scripts/controllers/coinController.js"></script>
 </body>
 </html>
