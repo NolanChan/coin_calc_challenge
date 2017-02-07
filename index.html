@@ -37,12 +37,16 @@
       <!-- END bottom coins group-->
 
       <div class="form-group">
-        <input class="form-control text-right" type="number">
+        <input 
+        ng-model="inputCents"
+        class="form-control text-right" 
+        type="number">
       </div>
-      <button class="calcBtn btn btn-block">CALCULATE</button>
-      <div class="form-group">
-        
-      </div>
+      <button 
+      ng-click="calculateClick()"
+      class="calcBtn btn btn-block">
+        CALCULATE
+      </button>
     </div>
     <!-- END centered .coinsWrapper -->
   </div>
