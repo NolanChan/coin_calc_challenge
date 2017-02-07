@@ -30,4 +30,19 @@ var sortCoins = (arr) => {
   );
 }
 
-console.log(sortCoins([coin4, coin2, coin3, coin1]));
+var countCoins = (arr, cents) => {
+  var quotient;
+
+  for (var i = 0; i < arr.length; i++) {
+
+    quotient = cents / arr[i].denomination;
+    
+    if (quotient >= 1) {
+      arr[i].count = Math.floor(quotient);
+      cents -= (arr[i].count * arr[i].denomination);
+    }
+  }
+  return arr;
+}
+
+console.log(countCoins(sortCoins([coin4, coin2, coin3, coin1]), 69));
