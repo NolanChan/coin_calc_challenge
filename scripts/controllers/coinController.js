@@ -47,6 +47,9 @@ angular.module("coinCounter").controller("coinController", function ($scope) {
     );
   }
 
+  /*
+  Realized this calculation does not work for certain test cases, e.g., when using the largest denomination coin results in a higher total coint of coins than not using the largest denomination coin.
+  */
   var countCoins = (arr, cents) => {
     var quotient;
 
